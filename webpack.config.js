@@ -1,5 +1,5 @@
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './app/index.jsx',
@@ -15,7 +15,7 @@ module.exports = {
     ],
   },
   // eslint-disable-next-line
-  plugins: [new htmlWebpackPlugin({
+  plugins: [new HtmlWebpackPlugin({
     template: 'app/index.html',
   })],
   mode: 'development',
