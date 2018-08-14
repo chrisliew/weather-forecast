@@ -26,7 +26,6 @@ export default class Search extends React.Component {
     // eslint-disable-next-line
     // api.fetchWeatherData(this.state.input)
     // Add later, if Data pulled is equal to true then do shit with it
-    
     this.setState(prevState => ({
       city: prevState.input,
     }));
@@ -42,7 +41,7 @@ export default class Search extends React.Component {
           Get Weather
         </button>
         {currentCity && (
-          <Redirect to={forecastURL.replace(/\s\s+/g, '%20')} />
+          <Redirect to={forecastURL} />
         )}
       </div>
     );

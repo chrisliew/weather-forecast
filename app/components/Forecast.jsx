@@ -55,6 +55,39 @@ export default class Forecast extends React.Component {
       });
   }
 
+  componentWillReceiveProps(nextProps) {
+    const urlMaker = {
+      APIkey: 'b714ec74bbab5650795063cb0fdf5fbe',
+      type: 'accurate',
+      units: 'metric',
+    };
+    const propsParse = queryString.parse(nextProps.location.search);
+    const cityParse = propsParse.city;
+
+    const currentWeatherNow = `http://api.openweathermap.org/data/2.5/weather?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}`;
+
+    axios.get(currentWeatherNow)
+      .then((response) => {
+        const cwData = response.data;
+        this.setState({ currentWeatherData: cwData });
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Data not found enter check if city exists");
+      });
+
+    const fiveDayForecast = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}&cnt=5`;
+
+    axios.get(fiveDayForecast)
+      .then((response) => {
+        const fiveDayData = response.data;
+        this.setState({ fiveDayForecastData: fiveDayData });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   handleClick (oneDayData, event) {
     this.setState({
       oneDayData: oneDayData,
@@ -68,6 +101,7 @@ export default class Forecast extends React.Component {
     const currentWeather = this.state.currentWeatherData;
     const clickedDayData = this.state.oneDayData;
 
+
     return (
       <div>
         <Navbar />
@@ -78,12 +112,12 @@ export default class Forecast extends React.Component {
           {currentWeather && fiveDayData && (
             <ul className="city-name">
               <li>{fiveDayData.city.name}</li>
-              <li>{console.log("CurrentWEather!!", currentWeather)} {Math.round(currentWeather.main.temp)} ºC</li>
+              <li>{Math.round(currentWeather.main.temp)} ºC</li>
             </ul>
           )}
           {clickedDayData && (
             <Redirect to={{
-              pathname: `/detail/${fiveDayData.city.name}_k=xxxxxx`,
+              pathname: `/detail/${fiveDayData.city.name}`,
               state: {
                 clickedDayData: this.state.oneDayData,
                 currentCity: fiveDayData.city.name,
