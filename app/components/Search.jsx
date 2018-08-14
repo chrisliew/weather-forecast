@@ -1,10 +1,8 @@
 import React from 'react';
-// eslint-disable-next-line
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import api from '../utils/api';
 
-// hit search button, want it to re render with the this.state.city = 
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -23,9 +21,6 @@ export default class Search extends React.Component {
   }
 
   handleClick() {
-    // eslint-disable-next-line
-    // api.fetchWeatherData(this.state.input)
-    // Add later, if Data pulled is equal to true then do shit with it
     this.setState(prevState => ({
       city: prevState.input,
     }));
@@ -36,7 +31,7 @@ export default class Search extends React.Component {
     const forecastURL = `/forecast?city=${currentCity}`;
     return (
       <div className={`search-navbar ${'search-main'}`}>
-        <input className="input" onChange={this.handleChange} type="text" placeholder="Enter city here" />
+        <input className="input" onChange={this.handleChange} type="text" placeholder="city, province" />
         <button name="submit" type="submit" onClick={this.handleClick}>
           Get Weather
         </button>

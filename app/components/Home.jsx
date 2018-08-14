@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line
 import Search from './Search.jsx';
 import Navbar from './Navbar.jsx';
 
@@ -8,7 +7,7 @@ const Home = () => (
     <Navbar />
     <div className="main-container" style={{ backgroundImage: "url('app/images/pattern.svg')" }}>
       <h1>
-        Enter a City and State
+        Enter a City and Province or State
       </h1>
       <Search />
     </div>

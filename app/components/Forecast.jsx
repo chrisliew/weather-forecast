@@ -112,7 +112,8 @@ export default class Forecast extends React.Component {
           {currentWeather && fiveDayData && (
             <ul className="city-name">
               <li>{fiveDayData.city.name}</li>
-              <li>{Math.round(currentWeather.main.temp)} ºC</li>
+              <li className="current-temp">{Math.round(currentWeather.main.temp)} ºC</li>
+              <li className="details">Click on day for details</li>
             </ul>
           )}
           {clickedDayData && (

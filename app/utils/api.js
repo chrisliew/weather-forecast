@@ -34,9 +34,4 @@ module.exports = {
         console.log(error);
       });
   },
-
-  //   return axios.all([getCurrentWeather(), getFiveDayForecast()])
-  //     .then(axios.spread(() => {
-  //     }));
-  // },
 };

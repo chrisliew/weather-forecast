@@ -23,19 +23,33 @@
 .forecast-icon {
   width: 15em;
   height: 12em;
+  margin: 1.2em;
 }
 
 .forecast-date {
   color: black;
   font-weight: bold;
-  font-size: 2.5em;
+  font-size: 2em;
   text-align: center;
-  width: 300px;
 }
 
 .city-name {
   text-align: center;
   font-size: 3em;
+  list-style: none;
+  margin: 0.5em;
+}
+
+.current-temp {
+  text-align: center;
+  font-size: 0.7em;
+  list-style: none;
+  margin: 0.5em;
+}
+
+.details {
+  text-align: center;
+  font-size: 0.5em;
   list-style: none;
   margin: 0.5em;
 }
