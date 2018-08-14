@@ -92,7 +92,7 @@ export default class Forecast extends React.Component {
     this.setState({
       oneDayData: oneDayData,
     });
-    console.log('oneday', this.state.oneDayData);
+    console.log('BOO', this.state.oneDayData);
   }
 
 
