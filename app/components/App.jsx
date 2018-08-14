@@ -5,6 +5,7 @@ import Home from './Home.jsx';
 import Forecast from './Forecast.jsx';
 import Navbar from './Navbar.jsx';
 import Detail from './Detail.jsx';
+require.context('../images', true, /\.svg$/);
 
 class App extends React.Component {
   render() {

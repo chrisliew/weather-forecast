@@ -31,7 +31,7 @@ export default class Forecast extends React.Component {
     const propsParse = queryString.parse(this.props.location.search);
     const cityParse = propsParse.city;
 
-    const currentWeatherNow = `http://api.openweathermap.org/data/2.5/weather?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}`;
+    const currentWeatherNow = `https://api.openweathermap.org/data/2.5/weather?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}`;
 
     axios.get(currentWeatherNow)
       .then((response) => {
@@ -43,7 +43,7 @@ export default class Forecast extends React.Component {
         alert("Data not found enter check if city exists");
       });
 
-    const fiveDayForecast = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}&cnt=5`;
+    const fiveDayForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}&cnt=5`;
 
     axios.get(fiveDayForecast)
       .then((response) => {
@@ -64,7 +64,7 @@ export default class Forecast extends React.Component {
     const propsParse = queryString.parse(nextProps.location.search);
     const cityParse = propsParse.city;
 
-    const currentWeatherNow = `http://api.openweathermap.org/data/2.5/weather?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}`;
+    const currentWeatherNow = `https://api.openweathermap.org/data/2.5/weather?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}`;
 
     axios.get(currentWeatherNow)
       .then((response) => {
@@ -76,7 +76,7 @@ export default class Forecast extends React.Component {
         alert("Data not found enter check if city exists");
       });
 
-    const fiveDayForecast = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}&cnt=5`;
+    const fiveDayForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityParse}&type=${urlMaker.type}&units=${urlMaker.units}&APPID=${urlMaker.APIkey}&cnt=5`;
 
     axios.get(fiveDayForecast)
       .then((response) => {

@@ -12,13 +12,16 @@ var config = {
     filename: 'index_bundle.js',
     publicPath: '/',
   },
-  module: {
-    rules: [
-      { test: /\.(jsx)$/, use: 'babel-loader' },
-      { test: /\.(js)$/, use: 'babel-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-    ],
-  },
+  
+module: { 
+  rules: [ 
+    { test: /\.(js)$/, exclude: /(node_modules)/, use: 'babel-loader' }, 
+    { test: /\.css$/, use: ['style-loader', 'css-loader' ]}, 
+    { test: /\.(jsx)$/, use: 'babel-loader' },
+    { test: /\.svg$/, use: 'file-loader' },
+  ] },
+
+
   devServer: {
     historyApiFallback: true,
   },
