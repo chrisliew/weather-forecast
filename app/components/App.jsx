@@ -1,29 +1,28 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// eslint-disable-next-line
+import Search from './Search.jsx';
+// eslint-disable-next-line
+import Home from './Home.jsx';
+// eslint-disable-next-line
+import Forecast from './Forecast.jsx';
+import Navbar from './Navbar.jsx';
+import Detail from './Detail.jsx';
 
-
-const App = () => (
-  <div>
-    <nav className="nav-bar">
-      <span className="title">
-        Weather Forecaster
-      </span>
-      <input className="push" type="text" placeholder="San Diego, California" />
-      <button name="submit" type="submit">
-        Get Weather
-      </button>
-    </nav>
-    <div className="main-container" style={{ backgroundImage: "url('app/images/pattern.svg')" }}>
-      <h1>
-        Enter a City and State
-      </h1>
-      <div>
-        <input type="text" placeholder="San Diego, California" />
-      </div>
-      <button name="submit" type="submit">
-        Get Weather
-      </button>
-    </div>
-  </div>
-);
+class App extends React.Component {
+  render() {
+    return (
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/forecast" component={Forecast} />
+          <Route path="/detail" component={Detail} />
+        </Switch>
+      </Router>
+    </div>  
+    )
+  }
+}
 
 export default App;

@@ -1,0 +1,16 @@
+.detail-container .city-data {
+  list-style: none;
+  text-align: center;
+  font-size: 2em;
+  margin: 0.3em;
+}
+
+.detail-container .forecast-icon {
+  width: 9em;
+  height: 8em;
+  margin: 0.3em;
+}
+
+.city-data .city-data-text {
+  padding: 0.3em;
+}
