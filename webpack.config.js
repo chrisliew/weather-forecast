@@ -1,7 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
-module.exports = {
+// NODE_ENV to production
+// uglify
+
+var config = {
   entry: './app/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -22,5 +26,7 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
     template: 'app/index.html',
   })],
-  mode: 'development',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
 };
+
+module.exports = config;
